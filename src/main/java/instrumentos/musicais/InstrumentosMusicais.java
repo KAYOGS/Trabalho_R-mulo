@@ -16,4 +16,5 @@ public abstract class InstrumentosMusicais {
     
     public abstract void tocar();
     public abstract void afinar();
+    public abstract void manutencao();
 }
