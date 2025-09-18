@@ -3,59 +3,67 @@ package instrumentos.musicais;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("\n");
-        InstrumentosMusicais violao = new Violao();
-        violao.exibirInformacao();
-        violao.tocar();
-        violao.afinar();
+        InstrumentoSopro trompete = new InstrumentoSopro(
+            "Trompete",
+            "Latão",
+            2021,
+            750.0,
+            "Cilíndrica",
+            "Pistões"
+        );
 
-        System.out.println("\n");
-        InstrumentosMusicais bateria = new Bateria();
-        bateria.exibirInformacao();
-        bateria.tocar();
-        bateria.manutencao();
+        System.out.println("--- Dados do Instrumento de Sopro ---");
+        System.out.println("Nome: " + trompete.getNomeInstrumento());
+        System.out.println("Material: " + trompete.getMaterialInstrumento());
+        System.out.println("Ano de Fabricação: " + trompete.getAnoFabricacao());
+        System.out.println("Valor: R$" + trompete.getValorInstrumento());
+        System.out.println("Tipo de Boquilha: " + trompete.getTipoBoquilha());
+        System.out.println("Válvula de Escape: " + trompete.getValvulaEscape());
 
-        System.out.println("\n");
-        InstrumentosMusicais violino = new InstrumentosMusicais("Violino", "Madeira") {
-            @Override
-            public void afinar() {
-                System.out.println("O violino esta sendo afinado...");
-            }
+        System.out.println("\n--- Modificando o instrumento de Sopro ---");
+        trompete.setValorInstrumento(800.0);
+        trompete.setTipoBoquilha("Taça");
 
-            @Override
-            public void tocar() {
-                System.out.println("O violino esta tocando...");
-            }
+        System.out.println("Novo Valor: R$" + trompete.getValorInstrumento());
+        System.out.println("Novo Tipo de Boquilha: " + trompete.getTipoBoquilha());
 
-            @Override
-            public void manutencao(){
-                System.out.println("Fazendo manutenção no violino...");
-            }
-        };
-        
-        violino.exibirInformacao();
-        violino.afinar();
-        violino.tocar();
-        violino.manutencao();
+        System.out.println("\n--- Demonstração de Métodos (Sopro) ---");
+        double valorComDescontoSopro = trompete.calcularValor(50.0);
+        System.out.println("Valor com R$50 de desconto: R$" + valorComDescontoSopro);
 
-        System.out.println("\n");
-        InstrumentosMusicais tambor = new InstrumentosMusicais("Tambor", "Batuque") {
-            @Override
-            public void afinar() {}
+        double valorComDescontoETaxaSopro = trompete.calcularValor(50.0, 20.0);
+        System.out.println("Valor com R$50 de desconto e R$20 de taxa: R$" + valorComDescontoETaxaSopro);
 
-            @Override
-            public void tocar() {
-                System.out.println("O tambor está sendo tocado...");
-            }
+        System.out.println("\n" + "=".repeat(40) + "\n");
 
-            @Override
-            public void manutencao() {
-                System.out.println("O tambor está em manutenção...");
-            }
-        };
+        InstrumentoCordas guitarra = new InstrumentoCordas(
+            "Guitarra Elétrica",
+            "Madeira de Bordo",
+            2023,
+            2500.0,
+            6,
+            "Plano"
+        );
 
-        tambor.exibirInformacao();
-        tambor.tocar();
-        tambor.manutencao();
+        System.out.println("--- Dados do Instrumento de Cordas ---");
+        System.out.println("Nome: " + guitarra.getNomeInstrumento());
+        System.out.println("Material: " + guitarra.getMaterialInstrumento());
+        System.out.println("Ano de Fabricação: " + guitarra.getAnoFabricacao());
+        System.out.println("Valor: R$" + guitarra.getValorInstrumento());
+        System.out.println("Número de Cordas: " + guitarra.getNumeroDeCordas());
+        System.out.println("Tipo de Braço: " + guitarra.getTipoDeBraco());
+
+        System.out.println("\n--- Modificando o instrumento de Cordas ---");
+        guitarra.setValorInstrumento(2750.0);
+        guitarra.setNumeroDeCordas(7);
+        guitarra.setTipoDeBraco("Curvo");
+
+        System.out.println("Novo Valor: R$" + guitarra.getValorInstrumento());
+        System.out.println("Novo Número de Cordas: " + guitarra.getNumeroDeCordas());
+        System.out.println("Novo Tipo de Braço: " + guitarra.getTipoDeBraco());
+
+        System.out.println("\n--- Demonstração de Métodos (Cordas) ---");
+        double valorComDescontoCordas = guitarra.calcularValor(250.0);
+        System.out.println("Valor com R$250 de desconto: R$" + valorComDescontoCordas);
     }
 }
