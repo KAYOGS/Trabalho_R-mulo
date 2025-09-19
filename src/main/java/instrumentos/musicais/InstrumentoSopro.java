@@ -65,4 +65,14 @@ public class InstrumentoSopro extends InstrumentoMusical {
     public String getValvulaEscape() {
         return valvulaEscape;
     }
+
+    @Override
+    public String toString() {
+                return "Nome: " + getNomeInstrumento()
+                + "\nMaterial: " + getMaterialInstrumento()
+                + "\nAno de Fabricação: " + getAnoFabricacao()
+                + "\nValor: R$" + getValorInstrumento()
+                + "\nTipo de Boquilha: " + getTipoBoquilha()
+                + "\nValcula de Escape: " + getValvulaEscape();
+    }
 }

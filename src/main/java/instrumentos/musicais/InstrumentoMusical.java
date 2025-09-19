@@ -6,8 +6,11 @@ public abstract class InstrumentoMusical {
     private int anoFabricacao;
     private double valorInstrumento;
 
-    public InstrumentoMusical() {};
-    public InstrumentoMusical(String nomeInstrumento, String materialInstrumento, int anoFabricacao, double valorInstrumento) {
+    public InstrumentoMusical() {
+    };
+
+    public InstrumentoMusical(String nomeInstrumento, String materialInstrumento, int anoFabricacao,
+            double valorInstrumento) {
         this.nomeInstrumento = nomeInstrumento;
         this.materialInstrumento = materialInstrumento;
         this.anoFabricacao = anoFabricacao;
@@ -46,7 +49,10 @@ public abstract class InstrumentoMusical {
         this.valorInstrumento = valorInstrumento;
     }
 
-    public double calcularValor(){return this.getValorInstrumento();};
+    public double calcularValor() {
+        return this.getValorInstrumento();
+    };
+
     public double calcularValor(double desconto) {
         double valorDoInstrumentoComDesconto = (this.getValorInstrumento() - desconto);
         return valorDoInstrumentoComDesconto;
@@ -55,5 +61,10 @@ public abstract class InstrumentoMusical {
     public double calcularValor(double desconto, double taxa) {
         double valorDoInstrumentoComDescontoETaxa = ((this.getValorInstrumento() + taxa) - desconto);
         return valorDoInstrumentoComDescontoETaxa;
+    }
+
+    @Override
+    public String toString() {
+        return "ano " + this.anoFabricacao;
     }
 }

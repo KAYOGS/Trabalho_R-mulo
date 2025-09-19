@@ -4,7 +4,8 @@ public class InstrumentoCordas extends InstrumentoMusical {
     private int numeroDeCordas;
     private String tipoDeBraco;
 
-    public InstrumentoCordas(String nome, String material, int ano, double valor, int numeroDeCordas, String tipoDeBraco) {
+    public InstrumentoCordas(String nome, String material, int ano, double valor, int numeroDeCordas,
+            String tipoDeBraco) {
         super(nome, material, ano, valor);
         this.numeroDeCordas = numeroDeCordas;
         this.tipoDeBraco = tipoDeBraco;
@@ -64,5 +65,15 @@ public class InstrumentoCordas extends InstrumentoMusical {
     @Override
     public double getValorInstrumento() {
         return super.getValorInstrumento();
+    }
+
+    @Override
+    public String toString() {
+        return "Nome: " + getNomeInstrumento()
+                + "\nMaterial: " + getMaterialInstrumento()
+                + "\nAno de Fabricação: " + getAnoFabricacao()
+                + "\nValor: R$" + getValorInstrumento()
+                + "\nNúmero de Cordas: " + getNumeroDeCordas()
+                + "\nTipo de Braço: " + getTipoDeBraco();
     }
 }
