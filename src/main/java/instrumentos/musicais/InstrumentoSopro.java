@@ -1,15 +1,23 @@
 package instrumentos.musicais;
 
+// É CRIADO A CLASSE INSTRUMENTO DE SOPRO E HERDA A CLASSE ANCESTRAL INSTRUMENTO MUSICAL
 public class InstrumentoSopro extends InstrumentoMusical {
+
+    // É CRIADO DUAS VÁRIAVEIS PRIVADAS
     private String tipoBoquilha;
     private String valvulaEscape;
 
+    // CRIAÇÃO DO CONSTRUTOR COM PARÂMETROS E O SUPER
     public InstrumentoSopro(String nome, String material, int ano, double valor, String tipoBoquilha, String valvulaEscape) {
         super(nome, material, ano, valor);
         this.tipoBoquilha = tipoBoquilha;
         this.valvulaEscape = valvulaEscape;
     }
 
+    // CRIAÇÃO DO CONSTRUTOR VAZIO
+    public InstrumentoSopro() {}
+
+    // ABAIXO É FEITO OS GETTERS E SETTERS DE CADA VARIAVEL E OS MÉTODOS HERDADOS DA CLASSE ANCESTRAL
     @Override
     public void setNomeInstrumento(String nomeInstrumento) {
         super.setNomeInstrumento(nomeInstrumento);
@@ -70,8 +78,8 @@ public class InstrumentoSopro extends InstrumentoMusical {
     public String toString() {
                 return "Nome: " + getNomeInstrumento()
                 + "\nMaterial: " + getMaterialInstrumento()
-                + "\nAno de Fabricação: " + getAnoFabricacao()
-                + "\nValor: R$" + getValorInstrumento()
+                + "\nAno de Fabricacao: " + getAnoFabricacao()
+                + "\nValor: " + String.format("%.2f", getValorInstrumento()) + " Reais" // É FEITO A FORMATAÇÃO DO VALOR PARA MONETÁRIO
                 + "\nTipo de Boquilha: " + getTipoBoquilha()
                 + "\nValcula de Escape: " + getValvulaEscape();
     }
